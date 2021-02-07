@@ -1,5 +1,7 @@
 package models;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.nio.file.Path;
 import java.util.Map;
 
@@ -13,7 +15,7 @@ public class OriginalMetaFileStorage {
     /**
      * Singleton instance
      */
-    private static final OriginalMetaFileStorage instance = new OriginalMetaFileStorage();
+    private static final @NotNull OriginalMetaFileStorage instance = new OriginalMetaFileStorage();
 
     /**
      * This map stores original metafiles.
@@ -27,7 +29,7 @@ public class OriginalMetaFileStorage {
      *
      * @see OriginalMetaFile
      */
-    private final Map<Path, OriginalMetaFile> storage;
+    private final @NotNull Map<Path, OriginalMetaFile> storage;
 
     /**
      * Singleton classes must have private constructors.
@@ -35,7 +37,7 @@ public class OriginalMetaFileStorage {
      * This constructor initializes storage variable by
      * loadStorage() method.
      */
-    private OriginalMetaFileStorage() {
+    private @NotNull OriginalMetaFileStorage() {
         this.storage = loadStorage();
     }
 
@@ -43,7 +45,7 @@ public class OriginalMetaFileStorage {
      * This method gets an singleton instance of this class.
      * @return OriginalMetaFileStorage instance
      */
-    public static OriginalMetaFileStorage getInstance() {
+    public static @NotNull OriginalMetaFileStorage getInstance() {
         return instance;
     }
 
@@ -56,7 +58,7 @@ public class OriginalMetaFileStorage {
      *
      * @return Map with paths and original metafiles
      */
-    public Map<Path, OriginalMetaFile> getStorage() {
+    public @NotNull Map<Path, OriginalMetaFile> getStorage() {
         return storage;
     }
 
@@ -69,7 +71,7 @@ public class OriginalMetaFileStorage {
      *
      * @return Map with paths and original metafiles
      */
-    private Map<Path, OriginalMetaFile> loadStorage() {
+    private @NotNull Map<Path, OriginalMetaFile> loadStorage() {
         return null;
     }
 }

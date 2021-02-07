@@ -1,5 +1,11 @@
 package utilities.parsers;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This data-class is used by parsers.
  * 1. ParserNode's key ia a tag with arguments.
@@ -10,28 +16,27 @@ package utilities.parsers;
 public class ParserNode {
     /**
      * ParserNode's key ia a tag with arguments.
-     *
+     * <p>
      * For example, <p style="text-align: justify">Hello world!</p>
-     *  * Key is <p style="text-align: justify">
+     * Key is p
      */
-    private final String key;
+    private final @NotNull String key;
 
     /**
      * ParserNode's value is a value of the tag.
-     *
+     * <p>
      * For example, <p style="text-align: justify">Hello world!</p>
-     *  * Key is <p style="text-align: justify">
-     *  * Value is Hello world!
+     * * Value is Hello world!
      */
-    private final String value;
+    private final @NotNull String value;
 
     /**
      * This constructor creates default instance with filled fields.
      *
-     * @param key tag with arguments
-     * @param value value of the tag
+     * @param key        tag
+     * @param value      value of the tag
      */
-    public ParserNode(String key, String value) {
+    public @NotNull ParserNode(@NotNull String key, @NotNull String value) {
         this.key = key;
         this.value = value;
     }
@@ -41,7 +46,7 @@ public class ParserNode {
      *
      * @return tag with arguments
      */
-    public String getKey() {
+    public @NotNull String getKey() {
         return key;
     }
 
@@ -50,7 +55,7 @@ public class ParserNode {
      *
      * @return value of the tag
      */
-    public String getValue() {
+    public @NotNull String getValue() {
         return value;
     }
 }

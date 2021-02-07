@@ -1,5 +1,6 @@
 package utilities;
 
+import org.jetbrains.annotations.NotNull;
 import utilities.parsers.Parser;
 
 import java.nio.file.Path;
@@ -26,7 +27,7 @@ public final class ParserHelper {
      * @return Parser instance
      * @see Parser
      */
-    public static Parser getParserByFileExtension(Path path) {
+    public static @NotNull Parser getParserByFileExtension(@NotNull Path path) {
         return null;
     }
 }

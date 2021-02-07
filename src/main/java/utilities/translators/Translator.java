@@ -1,6 +1,8 @@
 package utilities.translators;
 
 import models.OriginalMetaFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +23,7 @@ public interface Translator {
      *
      * @return List with languages as String
      */
-    List<String> getAvailableLanguages();
+    @Nullable List<String> getAvailableLanguages();
 
     /**
      * This method translates file's parsed values and returns Map with translated data.
@@ -37,5 +39,5 @@ public interface Translator {
      * @see OriginalMetaFile
      * @see utilities.translators.TranslatorNode
      */
-    List<TranslatorNode> translate(OriginalMetaFile originalMetaFile, String languageFrom, String languageTo);
+    @NotNull List<TranslatorNode> translate(@NotNull OriginalMetaFile originalMetaFile, @NotNull String languageFrom, @NotNull String languageTo);
 }

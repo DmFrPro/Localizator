@@ -1,5 +1,6 @@
 package models;
 
+import org.jetbrains.annotations.NotNull;
 import utilities.parsers.ParserNode;
 import utilities.translators.TranslatorNode;
 
@@ -16,17 +17,17 @@ public final class TranslatedMetaFile {
     /**
      * Path for translated file.
      */
-    private final Path path;
+    private final @NotNull Path path;
 
     /**
      * File's content in a String object.
      */
-    private final String fileContent;
+    private final @NotNull String fileContent;
 
     /**
      * Language name.
      */
-    private final String language;
+    private final @NotNull String language;
 
     /**
      * This map will be filled by Translator.
@@ -37,7 +38,7 @@ public final class TranslatedMetaFile {
      * 1. Keys are original values
      * 2. Values are translated values
      */
-    private final List<ParserNode> parsedValues;
+    private final @NotNull List<ParserNode> parsedValues;
 
     /**
      * Original metafile, from which data this translated
@@ -45,7 +46,7 @@ public final class TranslatedMetaFile {
      *
      * @see OriginalMetaFile
      */
-    private final OriginalMetaFile originalMetaFile;
+    private final @NotNull OriginalMetaFile originalMetaFile;
 
     /**
      * This constructor initializes a new TranslatedMetaFile object.
@@ -54,7 +55,7 @@ public final class TranslatedMetaFile {
      * @param originalMetaFile Original file
      * @see utilities.translators.Translator
      */
-    private TranslatedMetaFile(Path path, String fileContent, String language, List<ParserNode> parsedValues, OriginalMetaFile originalMetaFile) {
+    private @NotNull TranslatedMetaFile(@NotNull Path path, @NotNull String fileContent, @NotNull String language, @NotNull List<ParserNode> parsedValues, @NotNull OriginalMetaFile originalMetaFile) {
         this.path = path;
         this.fileContent = fileContent;
         this.language = language;
@@ -62,7 +63,7 @@ public final class TranslatedMetaFile {
         this.originalMetaFile = originalMetaFile;
     }
 
-    public static TranslatedMetaFile newInstance(OriginalMetaFile originalMetaFile, List<TranslatorNode> translatedValues) {
+    public static @NotNull TranslatedMetaFile newInstance(OriginalMetaFile originalMetaFile, List<TranslatorNode> translatedValues) {
         return null;
     }
 
@@ -71,7 +72,7 @@ public final class TranslatedMetaFile {
      *
      * @return path of the translated file
      */
-    public Path getPath() {
+    public @NotNull Path getPath() {
         return path;
     }
 
@@ -80,7 +81,7 @@ public final class TranslatedMetaFile {
      *
      * @return original file's content
      */
-    public String getFileContent() {
+    public @NotNull String getFileContent() {
         return fileContent;
     }
 
@@ -89,7 +90,7 @@ public final class TranslatedMetaFile {
      *
      * @return language name
      */
-    public String getLanguage() {
+    public @NotNull String getLanguage() {
         return language;
     }
 
@@ -98,7 +99,7 @@ public final class TranslatedMetaFile {
      *
      * @return Map with original and translated values
      */
-    public List<ParserNode> getTranslatedValues() {
+    public @NotNull List<ParserNode> getTranslatedValues() {
         return parsedValues;
     }
 
@@ -108,7 +109,7 @@ public final class TranslatedMetaFile {
      * @return original metafile instance
      * @see OriginalMetaFile
      */
-    public OriginalMetaFile getOriginalMetaFile() {
+    public @NotNull OriginalMetaFile getOriginalMetaFile() {
         return originalMetaFile;
     }
 }

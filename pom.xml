@@ -8,6 +8,12 @@
     <artifactId>Localizator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
+        
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>20.1.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

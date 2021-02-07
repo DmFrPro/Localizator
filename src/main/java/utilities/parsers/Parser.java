@@ -1,6 +1,7 @@
 package utilities.parsers;
 
-import java.io.IOException;
+import org.jetbrains.annotations.NotNull;
+
 import java.nio.file.Path;
 import java.util.List;
 
@@ -26,8 +27,7 @@ public interface Parser {
      *
      * @param path file's path in filesystem
      * @return List with tags and values
-     * @throws IOException if we get reader stream error
      * @see ParserNode
      */
-    List<ParserNode> parse(Path path) throws IOException;
+    @NotNull List<ParserNode> parse(@NotNull Path path);
 }

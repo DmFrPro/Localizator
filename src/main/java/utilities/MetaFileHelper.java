@@ -2,6 +2,7 @@ package utilities;
 
 import models.OriginalMetaFile;
 import models.TranslatedMetaFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.Path;
 
@@ -26,7 +27,7 @@ public final class MetaFileHelper {
      * @param path file's path
      * @return file's content as one string
      */
-    public static String readFileContent(Path path) {
+    public static @NotNull String readFileContent(Path path) {
         return null;
     }
 
@@ -35,7 +36,7 @@ public final class MetaFileHelper {
      *
      * @param originalMetaFile original metafile instance
      */
-    public static void writeOriginalMetaFile(OriginalMetaFile originalMetaFile) {
+    public static void writeOriginalMetaFile(@NotNull OriginalMetaFile originalMetaFile) {
     }
 
     /**
@@ -43,7 +44,7 @@ public final class MetaFileHelper {
      *
      * @param translatedMetaFile translated metafile instance
      */
-    public static void writeTranslatedMetaFile(TranslatedMetaFile translatedMetaFile) {
+    public static void writeTranslatedMetaFile(@NotNull TranslatedMetaFile translatedMetaFile) {
     }
 
     /**
@@ -53,7 +54,7 @@ public final class MetaFileHelper {
      * @param originalMetaFile OriginalMetaFile instance of the file
      * @see OriginalMetaFile
      */
-    public static void saveOriginalMetaFile(Path path, OriginalMetaFile originalMetaFile) {
+    public static void saveOriginalMetaFile(@NotNull Path path, @NotNull OriginalMetaFile originalMetaFile) {
     }
 
     /**
@@ -63,7 +64,7 @@ public final class MetaFileHelper {
      * @return restored OriginalMetaFile's instance
      * @see OriginalMetaFile
      */
-    public static OriginalMetaFile loadOriginalMetaFile(Path path) {
+    public static @NotNull OriginalMetaFile loadOriginalMetaFile(@NotNull Path path) {
         return null;
     }
 }

@@ -1,5 +1,7 @@
 package utilities.translators;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This data-class is used by parsers.
  * 1. TranslatorNode's key ia a tag with arguments.
@@ -11,12 +13,12 @@ public class TranslatorNode {
     /**
      * A value on original language.
      */
-    private final String languageFromValue;
+    private final @NotNull String languageFromValue;
 
     /**
      * A value on translated language.
      */
-    private final String languageToValue;
+    private final @NotNull String languageToValue;
 
     /**
      * This constructor creates default instance with filled fields.
@@ -24,7 +26,7 @@ public class TranslatorNode {
      * @param languageFromValue value on original language
      * @param languageToValue   value on translated language
      */
-    public TranslatorNode(String languageFromValue, String languageToValue) {
+    public @NotNull TranslatorNode(@NotNull String languageFromValue, @NotNull String languageToValue) {
         this.languageFromValue = languageFromValue;
         this.languageToValue = languageToValue;
     }
@@ -34,7 +36,7 @@ public class TranslatorNode {
      *
      * @return value on original language
      */
-    public String getKey() {
+    public @NotNull String getKey() {
         return languageFromValue;
     }
 
@@ -43,7 +45,7 @@ public class TranslatorNode {
      *
      * @return value on translated language
      */
-    public String getLanguageToValue() {
+    public @NotNull String getLanguageToValue() {
         return languageToValue;
     }
 }

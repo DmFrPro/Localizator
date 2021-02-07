@@ -1,5 +1,6 @@
 package models;
 
+import org.jetbrains.annotations.NotNull;
 import utilities.parsers.ParserNode;
 
 import java.nio.file.Path;
@@ -17,17 +18,17 @@ public class OriginalMetaFile {
     /**
      * Path for original file.
      */
-    private final Path path;
+    private final @NotNull Path path;
 
     /**
      * File's content in a String object.
      */
-    private final String fileContent;
+    private final @NotNull String fileContent;
 
     /**
      * Language name.
      */
-    private final String language;
+    private final @NotNull String language;
 
     /**
      * This list will be filled by Parser.
@@ -35,7 +36,7 @@ public class OriginalMetaFile {
      * @see utilities.parsers.Parser
      * @see ParserNode
      */
-    private final List<ParserNode> parsedValues;
+    private final @NotNull List<ParserNode> parsedValues;
 
     /**
      * This map contains translated metafiles.
@@ -46,7 +47,7 @@ public class OriginalMetaFile {
      *
      * @see TranslatedMetaFile
      */
-    private final Map<Path, TranslatedMetaFile> translatedMetaFiles;
+    private final @NotNull Map<Path, TranslatedMetaFile> translatedMetaFiles;
 
     /**
      * This private constructor initializes a new instance of original metafile.
@@ -59,7 +60,7 @@ public class OriginalMetaFile {
      * @see utilities.parsers.Parser
      * @see ParserNode
      */
-    private OriginalMetaFile(Path path, String fileContent, String language, List<ParserNode> parsedValues) {
+    private @NotNull OriginalMetaFile(@NotNull Path path, @NotNull String fileContent, @NotNull String language, @NotNull List<ParserNode> parsedValues) {
         this.path = path;
         this.fileContent = fileContent;
         this.language = language;
@@ -73,7 +74,7 @@ public class OriginalMetaFile {
      * @param path file's path in filesystem
      * @return OriginalMetaFile instance
      */
-    public static OriginalMetaFile newInstance(Path path) {
+    public static @NotNull OriginalMetaFile newInstance(Path path) {
         return null;
     }
 
@@ -82,7 +83,7 @@ public class OriginalMetaFile {
      *
      * @return path of the original file
      */
-    public Path getPath() {
+    public @NotNull Path getPath() {
         return path;
     }
 
@@ -91,7 +92,7 @@ public class OriginalMetaFile {
      *
      * @return language name
      */
-    public String getLanguage() {
+    public @NotNull String getLanguage() {
         return language;
     }
 
@@ -100,7 +101,7 @@ public class OriginalMetaFile {
      *
      * @return original file's content
      */
-    public String getFileContent() {
+    public @NotNull String getFileContent() {
         return fileContent;
     }
 
@@ -110,7 +111,7 @@ public class OriginalMetaFile {
      * @return List with ParserNode and values of these tags
      * @see ParserNode
      */
-    public List<ParserNode> getParsedValues() {
+    public @NotNull List<ParserNode> getParsedValues() {
         return parsedValues;
     }
 
@@ -120,7 +121,7 @@ public class OriginalMetaFile {
      * @return Map with paths and TranslatedMetaFile objects
      * @see TranslatedMetaFile
      */
-    public Map<Path, TranslatedMetaFile> getTranslatedMetaFiles() {
+    public @NotNull Map<Path, TranslatedMetaFile> getTranslatedMetaFiles() {
         return translatedMetaFiles;
     }
 }

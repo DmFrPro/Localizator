@@ -6,13 +6,11 @@ package application;
  * @author dmfrpro
  */
 public class Application {
-
     /**
      * The entry point of application.
      *
      * @param args - always empty and just required by javac
      */
     public static void main(String[] args) {
-
     }
 }
