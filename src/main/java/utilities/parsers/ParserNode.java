@@ -23,6 +23,18 @@ public class ParserNode {
     private final @NotNull String key;
 
     /**
+     * ParserNode's attributes ia a map with args and values.
+     * <p>
+     * 1. Map key is an argument name
+     * 2. Map value is an argument value
+     *
+     * For example, <p style="text-align: justify">Hello world!</p>
+     * Key is style
+     * Value is text-align: justify
+     */
+    private final @NotNull Map<String, String> attributes;
+
+    /**
      * ParserNode's value is a value of the tag.
      * <p>
      * For example, <p style="text-align: justify">Hello world!</p>
@@ -36,8 +48,9 @@ public class ParserNode {
      * @param key        tag
      * @param value      value of the tag
      */
-    public @NotNull ParserNode(@NotNull String key, @NotNull String value) {
+    public @NotNull ParserNode(@NotNull String key, @NotNull Map<String, String> attributes, @NotNull String value) {
         this.key = key;
+        this.attributes = attributes;
         this.value = value;
     }
 
@@ -48,6 +61,15 @@ public class ParserNode {
      */
     public @NotNull String getKey() {
         return key;
+    }
+
+    /**
+     * Attributes getter.
+     *
+     * @return Map with attributes
+     */
+    public @NotNull Map<String, String> getAttributes() {
+        return attributes;
     }
 
     /**
