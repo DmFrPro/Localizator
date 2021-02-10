@@ -1,10 +1,19 @@
 package constants;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
- * This class contains only constant variables
+ * This interface contains only constant variables
  *
  * @author dmfrpro
  */
-public final class Constants {
-
+public interface Constants {
+    Path PROJECT_PATH = Paths.get(
+            Constants.class.getProtectionDomain()
+                    .getCodeSource()
+                    .getLocation()
+                    .getPath()
+                    .replace("/target/classes", "")
+    );
 }
