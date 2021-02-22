@@ -1,0 +1,30 @@
+<xml version="2.0" encoding="UTF-8">
+
+    <!-- tag + twoAttrs + text -->
+    <tag0 arg1="arg1_value" arg2="arg2_value">tag0_text</tag0>
+
+    <!-- tag + oneAttr -->
+    <tag0 arg1="arg1_value"/>
+
+    <!-- tag + emptyAttrs + text -->
+    <tag0>tag0_text</tag0>
+
+    <!-- tag + emptyAttrs + child tags -->
+    <tag1>
+        <!-- tag + twoAttrs + text -->
+        <tag2 arg1="arg1_value" arg2="arg2_value">tag2_text</tag2>
+
+        <!-- tag + oneAttr + child tags -->
+        <tag3 arg1="arg1_value">
+
+            <!-- tag + emptyAttrs + text -->
+            <tag4>tag4_text</tag4>
+        </tag3>
+    </tag1>
+
+    <!-- tag + emptyAttrs -->
+    <tag5/>
+
+    <!-- tag + twoAttrs + text -->
+    <tag6 arg1="arg1_value" arg2="arg2_value">tag6_text</tag6>
+</xml>
