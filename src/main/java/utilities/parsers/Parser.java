@@ -29,5 +29,5 @@ public interface Parser {
      * @return List with tags and values
      * @see ParserNode
      */
-    @NotNull List<ParserNode> parse(@NotNull Path path);
+    @NotNull List<ParserNode> parse(@NotNull Path path) throws Exception;
 }

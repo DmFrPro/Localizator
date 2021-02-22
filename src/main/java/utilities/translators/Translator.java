@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Translators in this application translates files to Map with String keys and values.
@@ -23,7 +22,7 @@ public interface Translator {
      *
      * @return List with languages as String
      */
-    @Nullable List<String> getAvailableLanguages();
+    @Nullable List<String> getAvailableLanguages() throws Exception;
 
     /**
      * This method translates file's parsed values and returns Map with translated data.
@@ -39,5 +38,9 @@ public interface Translator {
      * @see OriginalMetaFile
      * @see utilities.translators.TranslatorNode
      */
-    @NotNull List<TranslatorNode> translate(@NotNull OriginalMetaFile originalMetaFile, @NotNull String languageFrom, @NotNull String languageTo);
+    @NotNull List<TranslatorNode> translate(
+            @NotNull OriginalMetaFile originalMetaFile,
+            @NotNull String languageFrom,
+            @NotNull String languageTo
+    ) throws Exception;
 }
