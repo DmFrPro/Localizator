@@ -37,27 +37,27 @@ class XMLParserTest {
 
     static {
         Map<String, String> twoAttrs = new LinkedHashMap<>();
-        twoAttrs.put("arg1", "arg1_value");
-        twoAttrs.put("arg2", "arg2_value");
+        twoAttrs.put("arg1", "hello");
+        twoAttrs.put("arg2", "world");
 
         Map<String, String> oneAttr = new LinkedHashMap<>();
-        oneAttr.put("arg1", "arg1_value");
+        oneAttr.put("arg1", "hello");
 
         Map<String, String> emptyAttrs = new LinkedHashMap<>();
 
-        PARSED_VALUES.add(new ParserNode("tag0", twoAttrs, "tag0_text"));
+        PARSED_VALUES.add(new ParserNode("tag0", twoAttrs, "hello world"));
         PARSED_VALUES.add(new ParserNode("tag0", oneAttr, ""));
-        PARSED_VALUES.add(new ParserNode("tag0", emptyAttrs, "tag0_text"));
+        PARSED_VALUES.add(new ParserNode("tag0", emptyAttrs, "hello world"));
         
         PARSED_VALUES.add(new ParserNode("tag1", emptyAttrs, ""));
-        PARSED_VALUES.add(new ParserNode("tag2", twoAttrs, "tag2_text"));
+        PARSED_VALUES.add(new ParserNode("tag2", twoAttrs, "hello world"));
 
         PARSED_VALUES.add(new ParserNode("tag3", oneAttr, ""));
-        PARSED_VALUES.add(new ParserNode("tag4", emptyAttrs, "tag4_text"));
+        PARSED_VALUES.add(new ParserNode("tag4", emptyAttrs, "hello world"));
 
         PARSED_VALUES.add(new ParserNode("tag5", emptyAttrs, ""));
 
-        PARSED_VALUES.add(new ParserNode("tag6", twoAttrs, "tag6_text"));
+        PARSED_VALUES.add(new ParserNode("tag6", twoAttrs, "hello world"));
     }
 
     /**

@@ -1,24 +1,24 @@
 <xml version="2.0" encoding="UTF-8">
 
     <!-- tag + twoAttrs + text -->
-    <tag0 arg1="arg1_value" arg2="arg2_value">tag0_text</tag0>
+    <tag0 arg1="hello" arg2="world">hello world</tag0>
 
     <!-- tag + oneAttr -->
-    <tag0 arg1="arg1_value"/>
+    <tag0 arg1="hello"/>
 
     <!-- tag + emptyAttrs + text -->
-    <tag0>tag0_text</tag0>
+    <tag0>hello world</tag0>
 
     <!-- tag + emptyAttrs + child tags -->
     <tag1>
         <!-- tag + twoAttrs + text -->
-        <tag2 arg1="arg1_value" arg2="arg2_value">tag2_text</tag2>
+        <tag2 arg1="hello" arg2="world">hello world</tag2>
 
         <!-- tag + oneAttr + child tags -->
-        <tag3 arg1="arg1_value">
+        <tag3 arg1="hello">
 
             <!-- tag + emptyAttrs + text -->
-            <tag4>tag4_text</tag4>
+            <tag4>hello world</tag4>
         </tag3>
     </tag1>
 
@@ -26,5 +26,5 @@
     <tag5/>
 
     <!-- tag + twoAttrs + text -->
-    <tag6 arg1="arg1_value" arg2="arg2_value">tag6_text</tag6>
+    <tag6 arg1="hello" arg2="world">hello world</tag6>
 </xml>
