@@ -36,7 +36,7 @@ public class TranslatorNode {
      *
      * @return value on original language
      */
-    public @NotNull String getKey() {
+    public @NotNull String getLanguageFromValue() {
         return languageFromValue;
     }
 
