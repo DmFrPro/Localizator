@@ -1,10 +1,10 @@
 package utilities.translators;
 
-import models.OriginalMetaFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import utilities.parsers.ParserNode;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Translators in this application translates files to Map with String keys and values.
@@ -22,25 +22,27 @@ public interface Translator {
      *
      * @return List with languages as String
      */
-    @Nullable List<String> getAvailableLanguages() throws Exception;
+    @NotNull List<String> getAvailableLanguages() throws Exception;
 
     /**
-     * This method translates file's parsed values and returns Map with translated data.
-     * Map data:
+     * This method translates file's parsed values and returns List with translated nodes.
+     * Nodes data:
      * 1. Keys are original values
      * 2. Values are translated values
      *
-     * @param originalMetaFile instance of original file
-     *                         for getting parsed values by Parser
-     * @param languageFrom     language from
-     * @param languageTo       language to
+     * @param parsedValues        list with parsed values
+     *                            for getting parsed values by Parser
+     * @param languageFrom        translate from this language
+     * @param languagesTo         list with languages needed to translate to
+     * @param translateAttributes option to translate attributes
      * @return Map with original and translated values
-     * @see OriginalMetaFile
      * @see utilities.translators.TranslatorNode
+     * @see ParserNode
      */
-    @NotNull List<TranslatorNode> translate(
-            @NotNull OriginalMetaFile originalMetaFile,
+    @NotNull Map<String, List<TranslatorNode>> translate(
+            @NotNull List<ParserNode> parsedValues,
             @NotNull String languageFrom,
-            @NotNull String languageTo
+            @NotNull List<String> languagesTo,
+            boolean translateAttributes
     ) throws Exception;
 }
