@@ -21,7 +21,7 @@ import java.util.*;
  * @author dmfrpro
  * @see utilities.parsers.Parser
  */
-public class XMLParser implements Parser {
+class XMLParser implements Parser {
 
     /**
      * Logger

@@ -13,7 +13,7 @@ import utilities.parsers.ParserNode;
 import java.io.IOException;
 import java.util.*;
 
-public class MicrosoftTranslator implements Translator {
+class MicrosoftTranslator implements Translator {
 
     /**
      * Logger.
