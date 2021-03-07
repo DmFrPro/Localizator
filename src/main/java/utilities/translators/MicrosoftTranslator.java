@@ -3,7 +3,6 @@ package utilities.translators;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import models.OriginalMetaFile;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -199,7 +198,7 @@ class MicrosoftTranslator implements Translator {
      * @return Json-object with translated values as String
      * @throws IOException if something wrong happened with server
      * @see ParserNode
-     * @see OriginalMetaFile
+     * @see models.MetaFile
      */
     private @NotNull List<JsonNode> getTranslatedValuesAsJsonsList(
             @NotNull List<String> values,

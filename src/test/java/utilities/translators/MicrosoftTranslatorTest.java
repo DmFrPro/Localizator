@@ -2,7 +2,8 @@ package utilities.translators;
 
 
 import constants.Constants;
-import models.OriginalMetaFile;
+import models.MetaFile;
+import models.MetaFileFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +28,7 @@ class MicrosoftTranslatorTest {
 
     @Test
     void translate() throws Exception {
-        OriginalMetaFile originalMetaFile = OriginalMetaFile.newInstance(XML_EXAMPLE_FILE_PATH, "en");
+        MetaFile originalMetaFile = MetaFileFactory.newOriginalMetaFile(XML_EXAMPLE_FILE_PATH, "en");
         Translator translator = new MicrosoftTranslator();
 
         List<String> languagesTo = Arrays.asList("ru", "it");

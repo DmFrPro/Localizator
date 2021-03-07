@@ -1,19 +1,25 @@
 package models;
 
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import utilities.parsers.ParserFactory;
 import utilities.parsers.ParserNode;
 
 import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * This is a data-class for keeping necessary information of the original file.
  *
  * @author dmfrpro
  */
-public class OriginalMetaFile {
+class OriginalMetaFile implements MetaFile {
+
+    /**
+     * Logger.
+     */
+    private static final Logger logger = LoggerFactory.getLogger(OriginalMetaFile.class);
 
     /**
      * Path for original file.
@@ -39,17 +45,6 @@ public class OriginalMetaFile {
     private final @NotNull List<ParserNode> parsedValues;
 
     /**
-     * This map contains translated metafiles.
-     * <p>
-     * Map data:
-     * 1. Keys are a paths of translated files
-     * 2. Values are a TranslatedMetaFile objects
-     *
-     * @see TranslatedMetaFile
-     */
-    private final @NotNull Map<Path, TranslatedMetaFile> translatedMetaFiles;
-
-    /**
      * This private constructor initializes a new instance of original metafile.
      * You can init a new instance of original metafile by using getInstance() method.
      *
@@ -60,12 +55,16 @@ public class OriginalMetaFile {
      * @see utilities.parsers.Parser
      * @see ParserNode
      */
-    private @NotNull OriginalMetaFile(@NotNull Path path, @NotNull String fileContent, @NotNull String language, @NotNull List<ParserNode> parsedValues) {
+    private @NotNull OriginalMetaFile(
+            @NotNull Path path,
+            @NotNull String fileContent,
+            @NotNull String language,
+            @NotNull List<ParserNode> parsedValues
+    ) {
         this.path = path;
         this.fileContent = fileContent;
         this.language = language;
         this.parsedValues = parsedValues;
-        this.translatedMetaFiles = new HashMap<>();
     }
 
     /**
@@ -74,8 +73,23 @@ public class OriginalMetaFile {
      * @param path file's path in filesystem
      * @return OriginalMetaFile instance
      */
-    public static @NotNull OriginalMetaFile newInstance(Path path) {
-        return null;
+    public static @NotNull OriginalMetaFile newInstance(
+            @NotNull Path path,
+            @NotNull String language
+    ) throws Exception {
+
+        logger.info("Creating OriginalMetaFile from file " + path.toString());
+
+        String fileContent = MetaFileFactory.readFileContent(path);
+
+        // Parse the file
+        List<ParserNode> parsedValues = ParserFactory
+                .getParserByFileExtension(path)
+                .parse(path);
+
+        logger.info("Successfully created OriginalMetaFile from file " + path.toString());
+
+        return new OriginalMetaFile(path, fileContent, language, parsedValues);
     }
 
     /**
@@ -88,9 +102,9 @@ public class OriginalMetaFile {
     }
 
     /**
-     * Language getter.
+     * File's language.
      *
-     * @return language name
+     * @return language suffix as String
      */
     public @NotNull String getLanguage() {
         return language;
@@ -113,15 +127,5 @@ public class OriginalMetaFile {
      */
     public @NotNull List<ParserNode> getParsedValues() {
         return parsedValues;
-    }
-
-    /**
-     * OriginalValues getter.
-     *
-     * @return Map with paths and TranslatedMetaFile objects
-     * @see TranslatedMetaFile
-     */
-    public @NotNull Map<Path, TranslatedMetaFile> getTranslatedMetaFiles() {
-        return translatedMetaFiles;
     }
 }
