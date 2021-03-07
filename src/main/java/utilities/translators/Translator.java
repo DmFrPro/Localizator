@@ -25,19 +25,23 @@ public interface Translator {
     @NotNull List<String> getAvailableLanguages() throws Exception;
 
     /**
-     * This method translates file's parsed values and returns List with translated nodes.
+     * This method translates file's parsed values and returns Map with translated nodes.
+     * <p>
+     * Map data:
+     * 1. Keys are language suffixes
+     * 2. Values are lists with translator nodes
+     * <p>
      * Nodes data:
      * 1. Keys are original values
      * 2. Values are translated values
      *
      * @param parsedValues        list with parsed values
      *                            for getting parsed values by Parser
-     * @param languageFrom        translate from this language
+     * @param languageFrom        language from
      * @param languagesTo         list with languages needed to translate to
      * @param translateAttributes option to translate attributes
-     * @return Map with original and translated values
-     * @see utilities.translators.TranslatorNode
-     * @see ParserNode
+     * @return List with translated values
+     * @throws Exception if something wrong happened with server
      */
     @NotNull Map<String, List<TranslatorNode>> translate(
             @NotNull List<ParserNode> parsedValues,

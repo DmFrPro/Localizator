@@ -100,7 +100,12 @@ class MicrosoftTranslator implements Translator {
     }
 
     /**
-     * This method translates file's parsed values and returns List with translated nodes.
+     * This method translates file's parsed values and returns Map with translated nodes.
+     * <p>
+     * Map data:
+     * 1. Keys are language suffixes
+     * 2. Values are lists with translator nodes
+     * <p>
      * Nodes data:
      * 1. Keys are original values
      * 2. Values are translated values
