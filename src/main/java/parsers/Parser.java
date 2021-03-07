@@ -1,4 +1,4 @@
-package utilities.parsers;
+package parsers;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,4 +1,4 @@
-package utilities.translators;
+package translators;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

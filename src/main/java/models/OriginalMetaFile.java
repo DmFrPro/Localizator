@@ -3,8 +3,8 @@ package models;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utilities.parsers.ParserFactory;
-import utilities.parsers.ParserNode;
+import parsers.ParserFactory;
+import parsers.ParserNode;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -39,7 +39,7 @@ class OriginalMetaFile implements MetaFile {
     /**
      * This list will be filled by Parser.
      *
-     * @see utilities.parsers.Parser
+     * @see parsers.Parser
      * @see ParserNode
      */
     private final @NotNull List<ParserNode> parsedValues;
@@ -52,7 +52,7 @@ class OriginalMetaFile implements MetaFile {
      * @param fileContent  file's content as String
      * @param language     file's language
      * @param parsedValues parsed list by Parser
-     * @see utilities.parsers.Parser
+     * @see parsers.Parser
      * @see ParserNode
      */
     private @NotNull OriginalMetaFile(

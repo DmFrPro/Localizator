@@ -1,4 +1,4 @@
-package utilities.translators;
+package translators;
 
 /**
  * This utilitarian class contains useful methods for

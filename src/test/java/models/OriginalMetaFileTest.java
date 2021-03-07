@@ -3,7 +3,7 @@ package models;
 import constants.Constants;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import utilities.parsers.ParserNode;
+import parsers.ParserNode;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

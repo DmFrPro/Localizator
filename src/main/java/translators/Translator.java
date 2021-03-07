@@ -1,7 +1,7 @@
-package utilities.translators;
+package translators;
 
 import org.jetbrains.annotations.NotNull;
-import utilities.parsers.ParserNode;
+import parsers.ParserNode;
 
 import java.util.List;
 import java.util.Map;

@@ -3,8 +3,8 @@ package models;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utilities.parsers.ParserNode;
-import utilities.translators.TranslatorNode;
+import parsers.ParserNode;
+import translators.TranslatorNode;
 
 import java.nio.file.Path;
 import java.util.Comparator;
@@ -40,7 +40,7 @@ class TranslatedMetaFile implements MetaFile {
     /**
      * This list will be filled by Parser.
      *
-     * @see utilities.parsers.Parser
+     * @see parsers.Parser
      * @see ParserNode
      */
     private final @NotNull List<ParserNode> parsedValues;
@@ -48,7 +48,7 @@ class TranslatedMetaFile implements MetaFile {
     /**
      * This map will be filled by Translator.
      *
-     * @see utilities.translators.Translator
+     * @see translators.Translator
      * <p>
      * Map data:
      * 1. Keys are original values
@@ -69,7 +69,7 @@ class TranslatedMetaFile implements MetaFile {
      *
      * @param path             File's path in a filesystem
      * @param originalMetaFile Original file
-     * @see utilities.translators.Translator
+     * @see translators.Translator
      */
     private @NotNull TranslatedMetaFile(
             @NotNull Path path,

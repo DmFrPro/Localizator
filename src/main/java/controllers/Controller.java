@@ -27,11 +27,11 @@ public interface Controller {
      * 3. Read original file to OriginalMetaFile object and Parser
      *
      * @see models.OriginalMetaFile
-     * @see utilities.parsers.Parser
+     * @see parsers.Parser
      * <p>
      * 4. Translate OriginalMetaFile object to TranslatedMetaFile using Translator
      * @see models.TranslatedMetaFile
-     * @see utilities.translators.Translator
+     * @see translators.Translator
      * <p>
      * 5. Serialize OriginalMetaFile to selected directory
      * 6. Check if original file was changed:

@@ -1,4 +1,4 @@
-package utilities.parsers;
+package parsers;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.util.*;
  * Brought up with SAX parser.
  *
  * @author dmfrpro
- * @see utilities.parsers.Parser
+ * @see parsers.Parser
  */
 class XMLParser implements Parser {
 

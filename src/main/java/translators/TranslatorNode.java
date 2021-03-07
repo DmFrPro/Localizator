@@ -1,4 +1,4 @@
-package utilities.translators;
+package translators;
 
 import org.jetbrains.annotations.NotNull;
 

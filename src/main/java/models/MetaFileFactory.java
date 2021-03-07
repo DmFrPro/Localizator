@@ -3,7 +3,7 @@ package models;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utilities.translators.TranslatorNode;
+import translators.TranslatorNode;
 
 import java.io.*;
 import java.nio.file.Path;

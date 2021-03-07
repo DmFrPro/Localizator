@@ -1,6 +1,6 @@
 package models;
 
-import utilities.parsers.ParserNode;
+import parsers.ParserNode;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -38,7 +38,7 @@ public interface MetaFile {
      * File's parsed values.
      *
      * @return list with parsed values
-     * @see utilities.parsers.ParserNode
+     * @see parsers.ParserNode
      */
     List<ParserNode> getParsedValues();
 }

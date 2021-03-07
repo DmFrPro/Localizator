@@ -3,10 +3,10 @@ package models;
 import constants.Constants;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import utilities.parsers.ParserNode;
-import utilities.translators.Translator;
-import utilities.translators.TranslatorFactory;
-import utilities.translators.TranslatorNode;
+import parsers.ParserNode;
+import translators.Translator;
+import translators.TranslatorFactory;
+import translators.TranslatorNode;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

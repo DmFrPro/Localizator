@@ -1,4 +1,4 @@
-package utilities.translators;
+package translators;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,7 +7,7 @@ import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utilities.parsers.ParserNode;
+import parsers.ParserNode;
 
 import java.io.IOException;
 import java.util.*;

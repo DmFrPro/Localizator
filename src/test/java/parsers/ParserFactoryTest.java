@@ -1,4 +1,4 @@
-package utilities.parsers;
+package parsers;
 
 import constants.Constants;
 import org.junit.jupiter.api.Assertions;
