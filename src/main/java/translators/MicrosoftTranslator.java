@@ -128,6 +128,10 @@ class MicrosoftTranslator implements Translator {
 
         logger.info("Starting translating values");
 
+        // We must remove languageFrom from languagesTo list
+        // to prevent duplicated unnecessary translation
+        languagesTo.remove(languageFrom);
+
         // This list will be used to get Json with translated values
         List<String> values = new LinkedList<>();
 
